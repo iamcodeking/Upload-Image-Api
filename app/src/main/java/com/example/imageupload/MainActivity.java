@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button choose,upload;
     ImageView imageView;
     Bitmap bitmap,bitmap1;
-    String url="http://192.168.29.32:8080/imageupload.php";
+    String url="http://(your server's ip address)/imageupload.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
