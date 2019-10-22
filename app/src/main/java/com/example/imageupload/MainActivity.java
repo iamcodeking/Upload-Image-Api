@@ -83,14 +83,10 @@ public class MainActivity extends AppCompatActivity {
         {
             Uri imageUri = data.getData();
             try {
-                //getting bitmap object from uri
                  bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                  bitmap1=bitmap;
                 //displaying selected image to imageview
                 imageView.setImageBitmap(bitmap);
-
-                //calling the method uploadBitmap to upload image
-                //uploadBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -101,7 +97,9 @@ public class MainActivity extends AppCompatActivity {
             ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
             byte[] imagebytes=byteArrayOutputStream.toByteArray();
+            //encoding the image in bse64 
             String encoded= Base64.encodeToString(imagebytes,Base64.DEFAULT);
+            //returning encoded string  -> line 68
             return encoded;
         }
 
